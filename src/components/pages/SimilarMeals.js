@@ -1,0 +1,70 @@
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getMealByIdAction,
+  selectedCategoryAction,
+} from "../../redux/actions";
+import { StyledSimilar, SimilarLink, Item } from '../styles/SimilarMeals.styled'
+
+function SimilarMeals({ singleMeal }) {
+  const selectedCategory = useSelector((state) => state.selectedCategory);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (singleMeal)
+      dispatch(selectedCategoryAction(singleMeal.meals[0].strCategory));
+  }, [singleMeal]);
+
+  // Getting random meals without single selected meal
+  // No repetition
+
+  function listOfMealsFunc(numOfMeals) {
+    let listOfSimilarMeals = [],
+      randomMeals = [],
+      randomIndex,
+      i = 0;
+
+    if (selectedCategory && singleMeal) {
+      listOfSimilarMeals = selectedCategory.meals.filter(
+        (meal) => meal.idMeal !== singleMeal.meals[0].idMeal
+      );
+
+      while (numOfMeals > 0) {
+        randomIndex = Math.floor(Math.random() * listOfSimilarMeals.length);
+        randomMeals.push(listOfSimilarMeals[randomIndex]);
+        listOfSimilarMeals.splice(randomIndex, 1);
+        --numOfMeals;
+        ++i;
+      }
+      return randomMeals;
+    } else return null;
+  }
+
+  const similarMealsList = listOfMealsFunc(3);
+
+  const similarMealsJSX = similarMealsList
+    ? similarMealsList.map((meal) => {
+        return (
+          <SimilarLink
+            onClick={() => dispatch(getMealByIdAction(meal.idMeal))}
+            to={`/single-meal/id=${meal.idMeal}`}
+            key={meal.idMeal}
+          >
+            <Item id={meal.idMeal}>
+              <img src={meal.strMealThumb} alt="Meal" />
+              <h3>{meal.strMeal}</h3>
+            </Item>
+          </SimilarLink>
+        );
+      })
+    : null;
+
+  return (
+    <StyledSimilar>
+      <h1>Similar meals</h1>
+      <div className="similarMeals">{similarMealsJSX}</div>
+    </StyledSimilar>
+  );
+}
+
+export default SimilarMeals;
