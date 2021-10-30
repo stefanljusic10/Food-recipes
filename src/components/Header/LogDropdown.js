@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Dropdown } from '../styles/Header.styled'
-import { Button } from '../styles/Button.styled'
+import React, { useState } from "react"
+import { Dropdown } from "../styles/Header.styled"
+import { Button } from "../styles/Button.styled"
 
 function LogDropdown({ findUser }) {
-  const [user, setUser] = useState({ email: "", password: "" });
+  const [user, setUser] = useState({ email: "", password: "" })
 
   return (
     <Dropdown>
@@ -20,10 +20,10 @@ function LogDropdown({ findUser }) {
           placeholder="password"
           onChange={(e) => setUser({ ...user, [e.target.id]: e.target.value })}
         />
-        <Button marginTop='0'>Log in</Button>
+        <Button marginTop="0">Log in</Button>
       </form>
     </Dropdown>
-  );
+  )
 }
 
-export default LogDropdown;
+export default LogDropdown

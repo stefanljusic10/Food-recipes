@@ -1,7 +1,6 @@
-export const aboutUsReducer = () => {
-    return {
-        head: 'About Us',
-        text: `Contrary to popular belief,
+export const aboutUsReducer = () => ({
+  head: "About Us",
+  text: `Contrary to popular belief,
                 Lorem Ipsum is not simply random text.
                 It has roots in a piece of classical
                 Latin literature from 45 BC, making
@@ -24,6 +23,5 @@ export const aboutUsReducer = () => {
                 during the Renaissance. The first
                 line of Lorem Ipsum, "Lorem ipsum
                 dolor sit amet..", comes from a
-                line in section 1.10.32.`
-    }
-}
+                line in section 1.10.32.`,
+})

@@ -1,6 +1,12 @@
-import React from "react";
-import LogoImg from "../../assets/logo.png";
-import { StyledFooter, Images, Logo, Social, Copy } from '../styles/Footer.styled';
+import React from "react"
+import LogoImg from "../../assets/logo.png"
+import {
+  StyledFooter,
+  Images,
+  Logo,
+  Social,
+  Copy,
+} from "../styles/Footer.styled"
 
 function Footer() {
   return (
@@ -13,27 +19,25 @@ function Footer() {
           <Social>
             <li>
               <a href="#">
-                <i className="fa fa-facebook-f "></i>
+                <i className="fa fa-facebook-f " />
               </a>
             </li>
             <li>
               <a href="#">
-                <i className="fa fa-instagram"></i>
+                <i className="fa fa-instagram" />
               </a>
             </li>
             <li>
               <a href="#">
-                <i className="fa fa-twitter"></i>
+                <i className="fa fa-twitter" />
               </a>
             </li>
           </Social>
         </Images>
-        <Copy>
-          Copyright - Golux Technologies 2021 - Stefan Ljusic
-        </Copy>
-    </footer>
+        <Copy>Copyright - Golux Technologies 2021 - Stefan Ljusic</Copy>
+      </footer>
     </StyledFooter>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

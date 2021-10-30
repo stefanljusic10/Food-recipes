@@ -1,9 +1,9 @@
-import React from "react";
-import Welcome from "./Welcome";
-import Categories from "./Categories";
-import AboutUs from "./AboutUs";
-import Contact from "./Contact";
-import { HomeItem } from "../styles/HomeItem.styled";
+import React from "react"
+import Welcome from "./Welcome"
+import Categories from "./Categories"
+import AboutUs from "./AboutUs"
+import Contact from "./Contact"
+import { HomeItem } from "../styles/HomeItem.styled"
 
 function Home() {
   return (
@@ -13,7 +13,7 @@ function Home() {
       <AboutUs />
       <Contact />
     </HomeItem>
-  );
+  )
 }
 
-export default Home;
+export default Home

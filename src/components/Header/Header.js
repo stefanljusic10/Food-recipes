@@ -1,6 +1,6 @@
-import React from "react";
-import Navbar from "./Navbar";
-import Search from "./Search";
+import React from "react"
+import Navbar from "./Navbar"
+import Search from "./Search"
 import { StyledHeader } from "../styles/Header.styled"
 
 function Header() {
@@ -9,8 +9,7 @@ function Header() {
       <Search />
       <Navbar />
     </StyledHeader>
-    
-  );
+  )
 }
 
-export default Header;
+export default Header
