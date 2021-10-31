@@ -1,15 +1,15 @@
-import React from "react"
-import { BrowserRouter as Router, Route } from "react-router-dom"
-import { Provider } from "react-redux"
-import Home from "./components/pages/Home"
-import Category from "./components/pages/Category"
-import SearchPage from "./components/pages/SearchPage"
-import SingleMeal from "./components/pages/SingleMeal"
-import store from "./redux/store"
-import Footer from "./components/Footer/Footer"
-import Header from "./components/Header/Header"
-import { AppContainer } from "./components/styles/AppContainer.styled"
-import { GlobalStyles } from "./components/styles/GlobalStyles.styled"
+import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { store } from './redux/store'
+import Home from './components/pages/Home'
+import Category from './components/pages/Category'
+import SearchPage from './components/pages/SearchPage'
+import SingleMeal from './components/pages/SingleMeal'
+import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
+import { AppContainer } from './components/styles/AppContainer.styled'
+import { GlobalStyles } from './components/styles/GlobalStyles.styled'
 
 function App() {
   return (

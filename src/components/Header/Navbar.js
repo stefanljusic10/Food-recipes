@@ -1,7 +1,7 @@
-import React, { useState } from "react"
-import { useHistory } from "react-router"
-import LogDropdown from "./LogDropdown"
-import { StyledNavbar, NavbarList, NavbarItem } from "../styles/Header.styled"
+import React, { useState } from 'react'
+import { useHistory } from 'react-router'
+import LogDropdown from './LogDropdown'
+import { StyledNavbar, NavbarList, NavbarItem } from '../styles/Header.styled'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -18,10 +18,10 @@ function Navbar() {
       </NavbarItem>
       {isOpen ? <LogDropdown findUser={findUser} /> : null}
       <NavbarList>
-        <NavbarItem onClick={() => history.push("/")} href="#about">
+        <NavbarItem onClick={() => history.push('/')} href="#about">
           <li>About Us</li>
         </NavbarItem>
-        <NavbarItem onClick={() => history.push("/")} href="#contact">
+        <NavbarItem onClick={() => history.push('/')} href="#contact">
           <li>Contact</li>
         </NavbarItem>
       </NavbarList>

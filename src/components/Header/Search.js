@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-import { useHistory } from "react-router-dom"
-import { StyledSearch, SearchInput, SearchLink } from "../styles/Header.styled"
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import { StyledSearch, SearchInput, SearchLink } from '../styles/Header.styled'
 
 function Search() {
-  const [searchTerm, setSearchTerm] = useState("")
+  const [searchTerm, setSearchTerm] = useState('')
   const history = useHistory()
 
   const getSearchData = () => {
@@ -11,7 +11,7 @@ function Search() {
   }
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       history.push(`/search/s=${searchTerm}`)
     }
   }
@@ -19,9 +19,7 @@ function Search() {
   return (
     <StyledSearch>
       <SearchInput
-        onChange={(e) =>
-          setSearchTerm((prevSearchTerm) => (prevSearchTerm === e.target.value))
-        }
+        onChange={(e) => setSearchTerm(e.target.value)}
         onKeyPress={(e) => handleKeyPress(e)}
         type="text"
         placeholder="Search recipes"

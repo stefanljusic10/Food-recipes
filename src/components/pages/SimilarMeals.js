@@ -1,19 +1,16 @@
-import React, { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { getMealByIdAction, selectedCategoryAction } from "../../redux/actions"
-import {
-  StyledSimilar,
-  SimilarLink,
-  Item,
-} from "../styles/SimilarMeals.styled"
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectedCategoryThunk } from '../../redux/thunks/selectedCategoryThunk'
+import { getMealByIdThunk } from '../../redux/thunks/getMealByIdThunk'
+import { StyledSimilar, SimilarLink, Item } from '../styles/SimilarMeals.styled'
 
 function SimilarMeals({ singleMeal }) {
-  const selectedCategory = useSelector((state) => state.selectedCategory)
+  const { selectedCategory } = useSelector((state) => state.selectedCategory)
   const dispatch = useDispatch()
 
   useEffect(() => {
     if (singleMeal) {
-      dispatch(selectedCategoryAction(singleMeal.meals[0].strCategory))
+      dispatch(selectedCategoryThunk(singleMeal.meals[0].strCategory))
     }
   }, [singleMeal])
 
@@ -47,7 +44,7 @@ function SimilarMeals({ singleMeal }) {
   const similarMealsJSX = similarMealsList
     ? similarMealsList.map((meal) => (
         <SimilarLink
-          onClick={() => dispatch(getMealByIdAction(meal.idMeal))}
+          onClick={() => dispatch(getMealByIdThunk(meal.idMeal))}
           to={`/single-meal/id=${meal.idMeal}`}
           key={meal.idMeal}
         >

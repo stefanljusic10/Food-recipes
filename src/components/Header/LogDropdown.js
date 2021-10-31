@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-import { Dropdown } from "../styles/Header.styled"
-import { Button } from "../styles/Button.styled"
+import React, { useState } from 'react'
+import { Dropdown } from '../styles/Header.styled'
+import { Button } from '../styles/Button.styled'
 
 function LogDropdown({ findUser }) {
-  const [user, setUser] = useState({ email: "", password: "" })
+  const [user, setUser] = useState({ email: '', password: '' })
 
   return (
     <Dropdown>

@@ -1,12 +1,12 @@
-import React from "react"
-import LogoImg from "../../assets/logo.png"
+import React from 'react'
+import LogoImg from '../../assets/logo.png'
 import {
   StyledFooter,
   Images,
   Logo,
   Social,
   Copy,
-} from "../styles/Footer.styled"
+} from '../styles/Footer.styled'
 
 function Footer() {
   return (

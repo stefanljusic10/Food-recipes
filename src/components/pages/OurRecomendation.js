@@ -1,6 +1,6 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import { StyledRecomendation } from "../styles/OurRecomendation.styled"
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { StyledRecomendation } from '../styles/OurRecomendation.styled'
 
 function OurRecomendation({ recomendedMeal }) {
   const recomendedMealJSX = recomendedMeal ? (

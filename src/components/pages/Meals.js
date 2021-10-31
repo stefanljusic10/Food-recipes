@@ -1,11 +1,10 @@
-import React from "react"
-import { StyledMeals, MealLink, Item } from "../styles/Meals.styled"
+import React from 'react'
+import { StyledMeals, MealLink, Item } from '../styles/Meals.styled'
 
 function Meals({ meals }) {
   const listOfMealsJSX = meals
     ? meals.meals.slice(1, 10).map((meal) => (
         <MealLink
-          // onClick={() => dispatch(selectedCategoryAction(meal.strCategory))}
           to={`/single-meal/id=${meal.idMeal}`}
           key={meal.strMeal}
         >

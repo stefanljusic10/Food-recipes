@@ -1,19 +1,17 @@
-import React from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { toggleCategoriesAction } from "../../redux/actions"
-import MealImage from "../../assets/meal.jpg"
-import { StyledWelcome, Info, Image } from "../styles/Welcome.styled"
-import { Button } from "../styles/Button.styled"
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import MealImage from '../../assets/meal.jpg'
+import { StyledWelcome, Info, Image } from '../styles/Welcome.styled'
+import { Button } from '../styles/Button.styled'
+import { toggleCategories } from '../../redux/slices/toggleCategoriesSlice'
+import { headerInfo } from '../../assets/headerInfo'
 
 function HomeHeader() {
-  const headerInfo = useSelector((state) => state.headerInfo)
   const dispatch = useDispatch()
 
   const changeDisplay = () => {
-    dispatch(toggleCategoriesAction())
+    dispatch(toggleCategories())
   }
-
-  const imageJSX = <Image src={MealImage} alt="Meal" />
 
   return (
     <StyledWelcome>
@@ -25,7 +23,7 @@ function HomeHeader() {
           <i className="fa fa-angle-down arrow-down" />
         </Button>
       </Info>
-      {imageJSX}
+      <Image src={MealImage} alt="Meal" />
     </StyledWelcome>
   )
 }

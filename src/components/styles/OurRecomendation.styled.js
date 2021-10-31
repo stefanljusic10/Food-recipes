@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const StyledRecomendation = styled.div`
   margin: 10vh auto;
