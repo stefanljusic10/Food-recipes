@@ -1,43 +1,39 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 import { StyledContact, Input, Textarea } from '../styles/Contact.styled'
 import { Button } from '../styles/Button.styled'
+import 'react-toastify/dist/ReactToastify.css'
 
 toast.configure()
 
 function Contact() {
-  const [info, setInfo] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    message: '',
-  })
+  const { register, handleSubmit } = useForm()
 
-  const onFormSubmit = (e) => {
-    e.preventDefault()
+  const onFormSubmit = (data) => {
     const contactsArray = JSON.parse(localStorage.getItem('contacts')) || []
-    contactsArray.push(info)
+    contactsArray.push(data)
     localStorage.setItem('contacts', JSON.stringify(contactsArray))
     toast.success('Message was successfully sent!')
   }
 
   return (
     <StyledContact id="contact">
-      <form onSubmit={(e) => onFormSubmit(e)} className="contact__form">
+      <form onSubmit={handleSubmit(onFormSubmit)} className="contact__form">
         <h2>Contact</h2>
         <Input
           id="firstName"
           type="text"
           placeholder="First name"
-          onChange={(e) => setInfo({ ...info, [e.target.id]: e.target.value })}
+          {...register('firstName', { required: true, maxLength: 15 })}
         />
-        <br /> <br />
+        <br />
+        <br />
         <Input
           id="lastName"
           type="text"
           placeholder="Last name"
-          onChange={(e) => setInfo({ ...info, [e.target.id]: e.target.value })}
+          {...register('lastName', { required: true, maxLength: 15 })}
         />
         <br />
         <br />
@@ -45,7 +41,11 @@ function Contact() {
           id="email"
           type="email"
           placeholder="Email"
-          onChange={(e) => setInfo({ ...info, [e.target.id]: e.target.value })}
+          {...register('email',
+          { 
+            required: true,  
+            pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ 
+        })}
         />
         <br />
         <br />
@@ -54,7 +54,7 @@ function Contact() {
           id="message"
           rows="9"
           placeholder="Message"
-          onChange={(e) => setInfo({ ...info, [e.target.id]: e.target.value })}
+          {...register('message', { required: true })}
         />
         <br />
         <br />

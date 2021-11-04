@@ -9,7 +9,6 @@ function Category() {
   const { categoryName } = useParams()
   const dispatch = useDispatch()
   const { selectedCategory } = useSelector((state) => state.selectedCategory)
-  console.log(selectedCategory)
 
   useEffect(() => {
     dispatch(selectedCategoryThunk(categoryName))
