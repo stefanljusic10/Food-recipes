@@ -6,7 +6,7 @@ import { aboutUs } from '../../assets/aboutText'
 function AboutUs() {
   return (
     <About id="about">
-      <div className="about__info">
+      <div>
         <InfoHeader>{aboutUs.head}</InfoHeader>
         <InfoText>{aboutUs.text}</InfoText>
       </div>

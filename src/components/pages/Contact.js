@@ -19,7 +19,7 @@ function Contact() {
 
   return (
     <StyledContact id="contact">
-      <form onSubmit={handleSubmit(onFormSubmit)} className="contact__form">
+      <form onSubmit={handleSubmit(onFormSubmit)}>
         <h2>Contact</h2>
         <Input
           id="firstName"

@@ -6,7 +6,7 @@ export const About = styled.div`
   width: 100%;
   margin-top: 20vh;
 
-  .about__info {
+  div {
     width: 50%;
   }
 `

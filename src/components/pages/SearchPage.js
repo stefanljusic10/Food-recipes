@@ -12,7 +12,6 @@ function SearchPage() {
   const { getRandomMeal } = useSelector((state) => state.getRandomMeal)
   const { searchData } = useSelector((state) => state.searchData)
   const dispatch = useDispatch()
-  console.log(getRandomMeal)
 
   useEffect(() => {
     dispatch(getRandomMealThunk())
