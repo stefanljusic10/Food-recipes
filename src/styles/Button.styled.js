@@ -18,4 +18,10 @@ export const Button = styled.button`
     font-size: 1.4rem;
     margin-left: 0.5vw;
   }
+
+  /* &:active{
+    .fa-angle-down{
+      transform: rotate(-90deg);
+    }
+  } */
 `

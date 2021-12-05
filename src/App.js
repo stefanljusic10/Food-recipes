@@ -8,8 +8,8 @@ import SearchPage from './components/pages/SearchPage'
 import SingleMeal from './components/pages/SingleMeal'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
-import { AppContainer } from './components/styles/AppContainer.styled'
-import { GlobalStyles } from './components/styles/GlobalStyles.styled'
+import { AppContainer } from './styles/AppContainer.styled'
+import { GlobalStyles } from './styles/GlobalStyles.styled'
 
 function App() {
   return (
@@ -18,10 +18,10 @@ function App() {
         <GlobalStyles />
         <Header />
         <AppContainer>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/category/c=:categoryName" component={Category} />
-          <Route path="/search/s=:searchTerm" component={SearchPage} />
-          <Route path="/single-meal/id=:idMeal" component={SingleMeal} />
+          <Route exact path='/' component={Home} />
+          <Route exact path='/category/c=:categoryName' component={Category} />
+          <Route path='/search/s=:searchTerm' component={SearchPage} />
+          <Route path='/single-meal/id=:idMeal' component={SingleMeal} />
         </AppContainer>
         <Footer />
       </Router>

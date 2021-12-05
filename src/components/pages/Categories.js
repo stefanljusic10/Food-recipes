@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCategoriesThunk } from '../../redux/thunks/getCategoriesThunk'
-import { HomeItem } from '../styles/HomeItem.styled'
-import { StyledCategories, CategoriesLink, Item, ItemImage, ItemHeader } from '../styles/Categories.styled'
+import { HomeItem } from '../../styles/HomeItem.styled'
+import {
+  StyledCategories, CategoriesLink, Item, ItemImage, ItemHeader,
+} from '../../styles/Categories.styled'
 
 function Categories() {
   const dispatch = useDispatch()
@@ -13,23 +15,22 @@ function Categories() {
     dispatch(getCategoriesThunk())
   }, [])
 
-  const listOfCategoriesJSX =
-    loading && isOpen
-      ? categories.categories.map((category) => (
-          <CategoriesLink
-            to={`/category/c=${category.strCategory}`}
-            key={category.idCategory}
-          >
-            <Item>
-              <ItemImage src={category.strCategoryThumb} alt="Meal category" />
-              <ItemHeader>{category.strCategory}</ItemHeader>
-            </Item>
-          </CategoriesLink>
-        ))
-      : null
+  const listOfCategoriesJSX = loading && isOpen
+    ? categories.categories.map((category) => (
+      <CategoriesLink
+        to={`/category/c=${category.strCategory}`}
+        key={category.idCategory}
+      >
+        <Item>
+          <ItemImage src={category.strCategoryThumb} alt='Meal category' />
+          <ItemHeader>{category.strCategory}</ItemHeader>
+        </Item>
+      </CategoriesLink>
+    ))
+    : null
 
   return (
-    <HomeItem>
+    <HomeItem data-testId='categories'>
       <StyledCategories>{listOfCategoriesJSX}</StyledCategories>
     </HomeItem>
   )

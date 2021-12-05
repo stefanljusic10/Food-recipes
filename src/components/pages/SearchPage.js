@@ -21,7 +21,9 @@ function SearchPage() {
 
   return (
     <>
-      <OurRecomendation recomendedMeal={getRandomMeal} /> */
+      <OurRecomendation recomendedMeal={getRandomMeal} />
+      {' '}
+      */
       <Meals meals={searchData[0]} />
     </>
   )

@@ -15,6 +15,6 @@ export const store = configureStore({
     getMealById: getMealByIdReducer,
     searchData: searchDataReducer,
     listOfCategories: listOfCategoriesReducer,
-    getRandomMeal: getRandomMealReducer
+    getRandomMeal: getRandomMealReducer,
   },
 })

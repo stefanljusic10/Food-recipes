@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectedCategoryThunk } from '../../redux/thunks/selectedCategoryThunk'
 import { getMealByIdThunk } from '../../redux/thunks/getMealByIdThunk'
-import { StyledSimilar, SimilarLink, Item } from '../styles/SimilarMeals.styled'
+import { StyledSimilar, SimilarLink, Item } from '../../styles/SimilarMeals.styled'
 
 function SimilarMeals({ singleMeal }) {
   const { selectedCategory } = useSelector((state) => state.selectedCategory)
@@ -25,7 +25,7 @@ function SimilarMeals({ singleMeal }) {
 
     if (selectedCategory && singleMeal) {
       listOfSimilarMeals = selectedCategory.meals.filter(
-        (meal) => meal.idMeal !== singleMeal.meals[0].idMeal
+        (meal) => meal.idMeal !== singleMeal.meals[0].idMeal,
       )
 
       while (numOfMealsCopy > 0) {
@@ -43,23 +43,23 @@ function SimilarMeals({ singleMeal }) {
 
   const similarMealsJSX = similarMealsList
     ? similarMealsList.map((meal) => (
-        <SimilarLink
-          onClick={() => dispatch(getMealByIdThunk(meal.idMeal))}
-          to={`/single-meal/id=${meal.idMeal}`}
-          key={meal.idMeal}
-        >
-          <Item id={meal.idMeal}>
-            <img src={meal.strMealThumb} alt="Meal" />
-            <h3>{meal.strMeal}</h3>
-          </Item>
-        </SimilarLink>
-      ))
+      <SimilarLink
+        onClick={() => dispatch(getMealByIdThunk(meal.idMeal))}
+        to={`/single-meal/id=${meal.idMeal}`}
+        key={meal.idMeal}
+      >
+        <Item id={meal.idMeal}>
+          <img src={meal.strMealThumb} alt='Meal' />
+          <h3>{meal.strMeal}</h3>
+        </Item>
+      </SimilarLink>
+    ))
     : null
 
   return (
     <StyledSimilar>
       <h1>Similar meals</h1>
-      <div className="similarMeals">{similarMealsJSX}</div>
+      <div className='similarMeals'>{similarMealsJSX}</div>
     </StyledSimilar>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { StyledSearch, SearchInput, SearchLink } from '../styles/Header.styled'
+import { StyledSearch, SearchInput, SearchLink } from '../../styles/Header.styled'
 
 function Search() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -21,11 +21,11 @@ function Search() {
       <SearchInput
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyPress={(e) => handleKeyPress(e)}
-        type="text"
-        placeholder="Search recipes"
+        type='text'
+        placeholder='Search recipes'
       />
       <SearchLink to={`/search/${searchTerm}`} onClick={() => getSearchData()}>
-        <i className="fa fa-search" />
+        <i className='fa fa-search' />
       </SearchLink>
     </StyledSearch>
   )

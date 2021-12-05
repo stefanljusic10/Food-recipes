@@ -6,30 +6,30 @@ import {
   Logo,
   Social,
   Copy,
-} from '../styles/Footer.styled'
+} from '../../styles/Footer.styled'
 
 function Footer() {
   return (
-    <StyledFooter>
+    <StyledFooter data-testid='footer'>
       <footer>
         <Images>
-          <a href="#">
-            <Logo src={LogoImg} alt="Logo" />
+          <a href='#'>
+            <Logo src={LogoImg} alt='Logo' />
           </a>
           <Social>
             <li>
-              <a href="#">
-                <i className="fa fa-facebook-f " />
+              <a href='#'>
+                <i className='fa fa-facebook-f ' />
               </a>
             </li>
             <li>
-              <a href="#">
-                <i className="fa fa-instagram" />
+              <a href='#'>
+                <i className='fa fa-instagram' />
               </a>
             </li>
             <li>
-              <a href="#">
-                <i className="fa fa-twitter" />
+              <a href='#'>
+                <i className='fa fa-twitter' />
               </a>
             </li>
           </Social>

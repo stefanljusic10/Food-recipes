@@ -3,11 +3,11 @@ import Welcome from './Welcome'
 import Categories from './Categories'
 import AboutUs from './AboutUs'
 import Contact from './Contact'
-import { HomeItem } from '../styles/HomeItem.styled'
+import { HomeItem } from '../../styles/HomeItem.styled'
 
 function Home() {
   return (
-    <HomeItem>
+    <HomeItem data-testId='homepage'>
       <Welcome />
       <Categories />
       <AboutUs />
